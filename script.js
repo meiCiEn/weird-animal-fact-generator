@@ -34,7 +34,7 @@ const animalFacts = [
     },
     {
         animal: "arctic tern",
-        location: "Arctic and Antarctic regions",
+        location: "the Arctic and Antarctic regions",
         trait: "migrates farther than any other animal — up to 71,000 km a year"
     },
     {
@@ -79,3 +79,11 @@ const animalFacts = [
     }
 ];
 
+const animalFactGenerator = (arr) => {
+    // generate random index from a given array
+    let animalIndex = Math.floor(Math.random() * arr.length);
+    // extract the values from the animal, location and trait keys in the object at that index
+    console.log(`The ${arr[animalIndex].animal}, found in ${arr[animalIndex].location}, ${arr[animalIndex].trait}.`)
+}
+
+animalFactGenerator(animalFacts);
