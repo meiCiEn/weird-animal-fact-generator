@@ -82,7 +82,7 @@ const animalFacts = [
 const animalFactGenerator = (arr) => {
     // generate random index from a given array
     let animalIndex = Math.floor(Math.random() * arr.length);
-    // extract the values from the animal, location and trait keys in the object at that index
+    // extract the values from the animal, location and trait keys in the object at that index, and log in a message to the console
     console.log(`The ${arr[animalIndex].animal}, found in ${arr[animalIndex].location}, ${arr[animalIndex].trait}.`)
 }
 
