@@ -96,10 +96,6 @@ const animalFactGenerator = ( arr ) =>
 
     animalNameId.textContent = animalName;
     animalFactId.textContent = animalFact;
-
-
-
-    console.log( `The ${ arr[ animalIndex ].animal }, found in ${ arr[ animalIndex ].location }, ${ arr[ animalIndex ].trait }.` );
 };
 
 // when you click the button, an animal fact appears above
