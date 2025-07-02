@@ -79,11 +79,33 @@ const animalFacts = [
     }
 ];
 
-const animalFactGenerator = (arr) => {
-    // generate random index from a given array
-    let animalIndex = Math.floor(Math.random() * arr.length);
-    // extract the values from the animal, location and trait keys in the object at that index, and log in a message to the console
-    console.log(`The ${arr[animalIndex].animal}, found in ${arr[animalIndex].location}, ${arr[animalIndex].trait}.`)
-}
+// access the various elements we will manipulate in the DOM
+const animalNameId = document.getElementById( "animal-name" );
+const animalFactId = document.getElementById( "animal-fact" );
+const generateBtnId = document.getElementById( "generate-btn" );
 
-animalFactGenerator(animalFacts);
+
+const animalFactGenerator = ( arr ) =>
+{
+    // generate random index from a given array
+    let animalIndex = Math.floor( Math.random() * arr.length );
+
+    // create a message giving the animal fact
+    let animalName = arr[ animalIndex ].animal;
+    let animalFact = `The ${ arr[ animalIndex ].animal }, found in ${ arr[ animalIndex ].location }, ${ arr[ animalIndex ].trait }.`;
+
+    animalNameId.textContent = animalName;
+    animalFactId.textContent = animalFact;
+
+
+
+    console.log( `The ${ arr[ animalIndex ].animal }, found in ${ arr[ animalIndex ].location }, ${ arr[ animalIndex ].trait }.` );
+};
+
+// when you click the button, an animal fact appears above
+generateBtnId.addEventListener( "click", animalFactGenerator( animalFacts ) );
+
+generateBtnId.addEventListener( "click", function ()
+{
+    animalFactGenerator( animalFacts );
+} );
